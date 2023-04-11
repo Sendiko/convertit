@@ -27,16 +27,19 @@ while True:
         # Convert string to ASCII
         s = input("Enter a string to convert to ASCII: ")
         ascii_values = convert_string_to_ascii(s)
-        print("ASCII representation:", ascii_values)
+        print("ASCII representation:", f"\033[34m{ascii_values}\033[0m")
     elif input_type == "decimal":
         # Convert decimal to binary, hexadecimal, and octal
-        decimal = int(input("Enter a decimal number to convert: "))
-        binary = convert_decimal_to_binary(decimal)
-        hexadecimal = convert_decimal_to_hexadecimal(decimal)
-        octal = convert_decimal_to_octal(decimal)
-        print("Binary representation:", binary)
-        print("Hexadecimal representation:", hexadecimal)
-        print("Octal representation:", octal)
+        try:
+            decimal = int(input("Enter a decimal number to convert: "))
+            binary = convert_decimal_to_binary(decimal)
+            hexadecimal = convert_decimal_to_hexadecimal(decimal)
+            octal = convert_decimal_to_octal(decimal)
+            print("Binary representation:t ", f"\033[34m{binary}\033[0m")
+            print("Hexadecimal representation:", f"\033[34m{hexadecimal}\033[0m")
+            print("Octal representation:", f"\033[34m{octal}\033[0m")
+        except ValueError:
+            print("Type Error, please try input numbers.")
     elif input_type == "exit":
         # Exit the program if the user enters 'exit'
         break
